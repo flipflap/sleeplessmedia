@@ -20,41 +20,61 @@
                body {
                    margin: 0;
                    padding: 0;
+                   background: #fff;
                    background:#131313;
+                   
                    font-family: helvetica;
                 }
                 h1 {
                     text-align: center;
                     color: white;
+                    color: #009FE4;
                     text-transform: uppercase;
                     font-size: 2.2em;
                 }
-               video#videoBackground { 
+               video { 
 
-                   position:absolute;
+                
                     width: 100%;
-                    left: 50%;
-                    top: 0;
-                    transform: translate(-50%, 0);
+           
+     
    
                     z-index: -100;
-                    background: url(xxx.jpg) no-repeat;
-                    background-size: cover; 
+
                 }
                 header {
                     width: 100%;
                     overflow: auto;
-                    height: 900px;
+                    padding: 0;
                 }
+                menu {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    padding: 0;
+                    margin: 0;
+
+                }    
+
                 header figure {
                     float: left;
-                    margin: 40px 0 0 0;
+                    margin: 0px 0 0 0;
                     padding: 0;
                 }
 
                 nav ul {
-                    float: left;
-                    margin: 0;
+                    float: right;
+                    margin: 70px 40px 0 0;
+                }
+                nav a {
+                    text-decoration: none;
+                    color: white;
+                    padding: 10px 30px 10px 30px;
+                    display: block;
+                }
+                nav .act {
+                    color: #009FE4;
                 }
                 nav ul li {
                     float: left;
@@ -64,17 +84,19 @@
                     list-style: none;
                     letter-spacing: 0.05em;
                     font-size: 1.2em;
-                    margin: 80px 30px 0 30px;
+                    
                 }
                 .mid {
                     max-width: 1200px;
-                    height: 2500px;
+                    height: 500px;
                     margin: 0 auto;
                 }
                 .mid ul li {
                     width: 30%;
                     margin: 0 1.5%;
                     background: #4A90E2;
+                    background: #272727;
+                    background: #cccccc;
                     float: left;
                     height: 150px;
                     list-style: none;
@@ -83,18 +105,30 @@
     </head>
     
     <body>
+        
+         
+
+
         <header>
-            <figure>
-                <img src="logo.png">
-            </figure>
-            <nav>
-                <ul>
-                    <li>Videoproduktion</li>
-                    <li>Motion Design</li>
-                    <li>Interaction Design</li>
-                </ul>
-            </nav>
+            <video id="video1" class="video" preload loop autoplay muted playsinline poster="img/video/video_hg.jpg">
+                <source src="video/goldentour-short.mp4" type='video/mp4' />
+            </video> 
+            <menu>
+                <figure>
+                    <img src="logo.png">
+                </figure>
+                <nav>
+                    <ul>
+                        <li><a href="" class="act">Home</a></li>
+                        <li><a href="">Videoproduktion</a></li>
+                        <li><a href="">Motion Design</a></li>
+                        <li><a href="">Interaction Design</a></li>
+                    </ul>
+                </nav>
+            </menu>
         </header>
+
+
         <section class="mid">
             <h1>Motion Pixel</h1>
             <ul>
@@ -108,9 +142,9 @@
 
 
 
-    <video id="videoBackground" class="hidden-xs" preload loop autoplay muted playsinline poster="img/video/video_hg.jpg">
-       <source src="video/GoldenRundfahrt.mp4" type='video/mp4' />
-    </video>  
+
+
+
 
 
            

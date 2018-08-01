@@ -35,7 +35,7 @@
                     text-align: center;
                     color: #009FE4;
                     color: white;
-                    margin-top: 50px;
+                    margin-top: 20px;
                     text-transform: uppercase;
                     font-weight: 300;
                     letter-spacing: 0.5em;
@@ -95,9 +95,13 @@
                     font-size: 0.8em;
                     
                 }
+                .content {
+                    overflow: auto;
+                    padding: 20px 0 100px 0;
+
+                }
                 .mid {
                     max-width: 1000px;
-                    height: 500px;
                     margin: 0 auto;
                     text-align: center;
                 }
@@ -106,7 +110,6 @@
                     margin: 0 1.5%;
                     background: #4A90E2;
                     background: #272727;
-                    background: #cccccc;
                     float: left;
                     height: 150px;
                     list-style: none;
@@ -123,31 +126,28 @@
             <video id="video1" class="video" preload loop autoplay muted playsinline poster="img/video/video_hg.jpg">
                 <source src="video/lucerne.mp4" type='video/mp4' />
             </video> 
-            <menu>
-                <figure>
-                    <img src="logo.png">
-                </figure>
-                <nav>
-                    <ul>
-                        <li><a href="" class="act">Home</a></li>
-                        <li><a href="">Videoproduktion</a></li>
-                        <li><a href="">Motion Design</a></li>
-                        <li><a href="">Interaction Design</a></li>
-                    </ul>
-                </nav>
-            </menu>
+            
         </header>
 
 
-        <section class="mid">
-            <h1>Motion Pixel</h1>
-            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, </p>
-            <!--<ul>
-                <li></li>
-                <li></li>
-                <li></li>
-            </ul>-->
- 
+        <section class="content one">
+            <div class="wrapper mid">
+                <h1>Sleepless Studio</h1>
+                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, </p>
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="content two">
+            <div class="wrapper mid">
+                <h1>Referenzen</h1>
+                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, </p>
+
+            </div>
         </section>
 
 
@@ -166,9 +166,14 @@
 		
 
         
-		
+		<style>
+            .two {
+                background: #000;
+            }
+        </style>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
         <script src="js/parallax.min.js"></script>
+
      	
 
     </body>

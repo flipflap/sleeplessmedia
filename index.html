@@ -51,7 +51,7 @@
                     z-index: -100;
 
                 }
-                header {
+                .vidhead {
                     width: 100%;
                     overflow: auto;
                     padding: 0;
@@ -66,33 +66,35 @@
 
                 }    
 
-                header figure {
+                .vidhead figure {
                     float: left;
                     margin: 0px 0 0 0;
                     padding: 0;
                 }
 
+                nav {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    margin: 0;
+                    padding: 0;
+                }
+
                 nav ul {
-                    float: right;
-                    margin: 20px 40px 0 0;
+                    position: left;
+                    margin: 0 0 0 30px;
+                    padding: 0;
                 }
-                nav a {
-                    text-decoration: none;
-                    color: white;
-                    padding: 10px 30px 10px 30px;
-                    display: block;
-                }
+                
                 nav .act {
-                    color: #009FE4;
+                    color: #fff;
                 }
                 nav ul li {
                     float: left;
                     color: white;
-                    font-weight: 700;
-                    text-transform: uppercase;
+
                     list-style: none;
-                    letter-spacing: 0.1em;
-                    font-size: 0.8em;
+
                     
                 }
                 .content {
@@ -114,20 +116,77 @@
                     height: 150px;
                     list-style: none;
                 }
+
+
+
+
+
+
+
+                header {
+                    font-size: 0.8em;
+                    font-weight: 400;
+                    background: rgba(0,0,0,0.75);
+                    height: 70px;
+                    line-height: 70px;
+                    position: fixed;
+                    top: 0;
+                    transition: top 0.2s ease-in-out;
+                    width: 100%;
+                }
+
+                .button {
+                    display: inline-block;
+                    background:#009FE4;
+                    float:right;
+                    height: 100%;
+                    color: #fff;
+                }
+
+                header a {
+                    text-decoration: none;
+                    color:#999;
+                    padding: 0 50px 0 50px;
+                    vertical-align: middle;
+                    display: block;
+                }
+
+                .nav-up {
+                    top: -80px;
+                }
+
+                main {
+                background:url(
+                data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAPklEQVQYV2O8dOnSfwYg0NPTYwTRuAAj0QqxmYBNM1briFaIzRbi3UiRZ75uNgUHGbfvabgfsHqGaIXYPAMAD8wgC/DOrZ4AAAAASUVORK5CYII=
+                ) repeat;
+                    height: 2000px;
+                }
+                
+
+
+                
 		</style>
     </head>
     
     <body>
         
          
+        <header class="nav-down">
+            <nav>
+                <ul>
+                    <li><a href="" class="act">Home</a></li>
+                    <li><a href="">Videoproduktion</a></li>
+                    <li><a href="">Referenzen</a></li>
+                </ul>
+            </nav>
+            <a href="" class="button">Kontakt</a>
+        </header>
 
-
-        <header>
+        <section class="vidhead">
             <video id="video1" class="video" preload loop autoplay muted playsinline poster="img/video/video_hg.jpg">
                 <source src="video/lucerne.mp4" type='video/mp4' />
-            </video> 
-            
-        </header>
+            </video>             
+        </section>
 
 
         <section class="content one">
@@ -166,13 +225,49 @@
 		
 
         
-		<style>
-            .two {
-                background: #000;
-            }
-        </style>
+
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-        <script src="js/parallax.min.js"></script>
+        <script>
+// Hide Header on on scroll down
+var didScroll;
+var lastScrollTop = 0;
+var delta = 5;
+var navbarHeight = $('header').outerHeight();
+
+$(window).scroll(function(event){
+    didScroll = true;
+});
+
+setInterval(function() {
+    if (didScroll) {
+        hasScrolled();
+        didScroll = false;
+    }
+}, 250);
+
+function hasScrolled() {
+    var st = $(this).scrollTop();
+    
+    // Make sure they scroll more than delta
+    if(Math.abs(lastScrollTop - st) <= delta)
+        return;
+    
+    // If they scrolled down and are past the navbar, add class .nav-up.
+    // This is necessary so you never see what is "behind" the navbar.
+    if (st > lastScrollTop && st > navbarHeight){
+        // Scroll Down
+        $('header').removeClass('nav-down').addClass('nav-up');
+    } else {
+        // Scroll Up
+        if(st + $(window).height() < $(document).height()) {
+            $('header').removeClass('nav-up').addClass('nav-down');
+        }
+    }
+    
+    lastScrollTop = st;
+}
+        
+        </script>
 
      	
 
